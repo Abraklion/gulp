@@ -1,0 +1,47 @@
+
+//-----===== Базовые настройки ====-----//
+
+html
+  font-size font-size-body
+  line-height line-height-body
+
+body
+  background background-body
+  font-weight font-weight-body
+  font-family font-family-body
+  color color-body
+  overflow-wrap break-word
+  word-wrap break-word
+
+img
+  max-width 100%
+
+//-----===== Служебные класы - начало ====-----//
+
+// скрывает блок
+$visually-hidden
+  position absolute
+  width 1px
+  height 1px
+  margin -1px
+  border 0
+  padding 0
+  white-space nowrap
+  clip-path inset(100%)
+  clip rect(0, 0, 0, 0)
+  overflow hidden
+
+//-----===== Служебные класы - конец ====-----//
+
+//-----===== Общие стили - начало ====-----//
+
+.container{
+  mix-min-max(viewport-min, viewport-container, 0);
+}
+
+.wrapper{
+  mix-min-max(viewport-min, viewport-max, 15px);
+}
+
+//-----===== Общие стили - конец ====-----//
+

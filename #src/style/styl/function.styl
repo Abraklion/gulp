@@ -1,0 +1,19 @@
+
+//-----===== Функции ====-----//
+
+// переводит px в em
+fun-px-tp-em(px, context = 16px)
+  unit((px / context), em)
+
+
+// переводит px в rem
+fun-px-to-rem(size, basicSize = 16px)
+  unit((size / basicSize), rem)
+
+// считает ширину элемента в % от общий ширины блока
+fun-width-interest(widthElement, widthBlock)
+  (widthElement / widthBlock) * 100%
+
+// межбуквенный интервал
+fun-letter-spacing(sz, context = 16px)
+  (sz * context) / 1000

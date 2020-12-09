@@ -1,0 +1,99 @@
+
+//-----===== Мексины ====-----//
+
+// ------- Устанавливает максимальную и минимальную ширину сайта ------- //
+
+=mix-min-max($min-width, $max-width, $padding)
+  min-width: $min-width
+  max-width: $max-width
+  padding: 0 $padding
+  box-sizing: border-box
+  margin: 0 auto
+
+// ------- Устанавливает максимальную и минимальную ширину сайта ------- //
+
+// ------- Подключения шрифта ------- //
+
+=font($font_name, $file_name, $weight, $style)
+  @font-face
+    font-family: $font_name
+    font-display: swap
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2")
+    font-weight: #{$weight}
+    font-style: #{$style}
+
+// ------- Подключения шрифта ------- //
+
+// ------- Адаптивная типографика ------- //
+
+=dynamicText($minSizePercent, $maxSize, $minSize, $minWidthPx, $maxWidth, $minWidth)
+  font-size: calc(#{$minSizePercent} + (#{$maxSize} - #{$minSize}) * (100vw - #{$minWidthPx}) / (#{$maxWidth} - #{$minWidth}))
+
+      // minSizePercent - минимальне значения шрифта в %;
+      // maxSize - максимальный размер шрифта;
+      // minSize - минимальный размер шрифта;
+      // minWidthPx - минимальный ширина viewport в px;
+      // maxWidth - максимальная ширина viewport;
+      // minWidth - минимальная ширина viewport;
+
+// ------- Адаптивная типографика ------- //
+
+// ------- Убирает обтекания ------- //
+
+=clearfix()
+  &:before,
+  &:after
+    content: ''
+    display: table
+    clear: both
+
+// ------- Убирает обтекания ------- //
+
+// ------- Адаптивное видео ------- //
+
+=adaptive-video()
+  position: relative
+  padding-bottom: 56.25% /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+  padding-top: 30px
+  height: 0
+  overflow: hidden
+
+  iframe
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+// ------- Адаптивное видео ------- //
+
+// ------- Линия ------- ( Прим: -- . -- ) //
+
+=mix-line($col-circle:#e74c3c, $col-line:#f1ebe7)
+  display: block
+  width: 9px
+  height: 9px
+  position: relative
+  background: $col-circle
+  border-radius: 50%
+
+  &::before
+    content: ''
+    width: 80px
+    height: 1px
+    position: absolute
+    top: 50%
+    left: -93px
+    background: $col-line
+
+  &::after
+    content: ''
+    width: 80px
+    height: 1px
+    position: absolute
+    top: 50%
+    right: -93px
+    background: $col-line
+
+// ------- Линия ------- //
+
