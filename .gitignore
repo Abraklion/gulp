@@ -4,3 +4,6 @@
 
 # WebStorm
 /.idea/
+
+# Mac
+/.DS_Store/
