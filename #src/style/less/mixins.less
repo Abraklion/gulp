@@ -18,7 +18,7 @@
 // ------- Переводит px в rem ------- //
 .fun-px-to-rem(@size, @basicSize: 16px) {
 
-  @return @size / @basicSize#{rem};
+  @rem: (@size / @basicSize) * 1rem;
 
 }
 // ------- Переводит px в rem ------- //
